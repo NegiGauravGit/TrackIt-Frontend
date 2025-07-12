@@ -1,0 +1,86 @@
+.boards-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    height: 500px;
+    gap: 20px;
+
+}
+.InCompleted-section, .OnGoing-section, .Completed-section {
+    background-color: #fef6f4;
+    border-radius: 20px;
+    padding: 16px;
+}
+.board-ul li {
+    margin-left: 26px;
+}
+.header-content{
+    padding: 21px 13px;
+    display: flex;
+    justify-content: space-between;
+    width: 302px;
+}
+.IncompleteTask-Count p{
+    background-color: rgb(62, 78, 215);
+    padding: 3px;
+    border-radius: 91%;
+    height: 22px;
+    width: 20px;
+    text-align: center;
+    color: white;
+}
+.IncompleteSection-heading li::marker {
+    color: gray;
+}
+.Ongoing-header li::marker{
+    color: #f44819;
+}
+.complete-header li::marker{
+    color: #0cd321;
+}
+.category-heading p {
+    color: #dc7956;
+    font-weight: 700;
+    font-family: sans-serif;
+    background-color: #f6faff;
+    padding: 5px;
+    border-radius: 7px;
+}
+.all-Incomplete-Todo {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+.title-content p{
+    font-weight: 600;
+    font-size: large;
+    margin-bottom: 5px;
+}
+.discription-content p {
+    font-size: small;
+    color: #b6b6b6;
+    font-weight: 500;
+}
+.all-incomplete-todos {
+    /* padding: 9px 4px 15px 32px; */
+    padding: 10px 16px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+.incompleteTodo-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+}
+.otherOptions span{
+    cursor: pointer;
+}
+.discription-content {
+    margin-bottom: 17px;
+}
+.startAndEnd-Date p{
+    font-size: small;
+    font-weight: 500;
+}
