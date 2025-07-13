@@ -3,10 +3,14 @@ import "../Styling/Authentication.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import {setIsAuthenticated,setUserInfo} from '../../Features/AuthSlcie'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 
 
 export default function AuthenticationSection() {
+  const dispatch = useDispatch()
+
   const navigate = useNavigate()
   const [fromData,setformData] = useState({
     firstName: "",
@@ -85,7 +89,7 @@ export default function AuthenticationSection() {
           </div>
         </div>
         <div className="auth-img">
-          <img src="https://64.media.tumblr.com/95f98a1381686696a672f47b9909a65c/c348a86aefec32ba-da/s540x810/e173bacc72c3142d02ad128bca691c1aaa11a22a.jpg" alt="" />
+          <img src="https://64.media.tumblr.com/95f98a1381686696a672f47b9909a65c/c348a86aefec32ba-da/s540x810/e173bacc72c3142d02ad128bca691c1aaa11a22a.jpg" alt=""  />
         </div>
       </div>
     </div>

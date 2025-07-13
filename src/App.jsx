@@ -11,33 +11,11 @@ import {setIsAuthenticated,setUserInfo} from '../Features/AuthSlcie'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 function App() {
-  const username = useSelector((state) => state.Auth.userInfo.name)
+  const[loading,setloading] = useState(true)
   const isAuthenticated = useSelector((state)=> state.Auth.isAuthenticated)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  async function verifyUser(){
-    try{
-      const response = await axios.get("http://localhost:3000/user/verifyUser",{
-        withCredentials: true,
-      })
-      if(response.status === 200){
-        dispatch(setUserInfo(`${response.data.user.firstName} ${response.data.user.lastName}`))
-        dispatch(setIsAuthenticated(true))
-      }
-
-    }catch(error){
-      console.log(error)
-      if(error.response && error.response.status === 401){
-        console.log("inside error")
-        navigate('/Auth/:mode')
-      }
-    }
-  }
-
-  useEffect(() =>{
-    verifyUser()
-  },[])
 
   return (
     <>

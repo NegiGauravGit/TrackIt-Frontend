@@ -12,6 +12,7 @@ import {
 export default function BoardsSection() {
   const [loading, setLoading] = useState(true);
   const taskRefers = useSelector((state) => state.setTodoData.taskRefers);
+
   const totalIncompleteTodos = useSelector(
     (state) => state.setTodoData.totalIncompleteTodos
   );
@@ -45,8 +46,9 @@ export default function BoardsSection() {
     fetchAllTodos();
   }, [taskRefers]);
 
+
   useEffect(() => {
-    if (!loading && allTodos.length > 0) {
+    if (allTodos.length >= 0) {
       dispatch(
         setTotalIncompleteTodo(
           allTodos.filter((todos) => todos.status === "Incomplete")
@@ -70,7 +72,7 @@ export default function BoardsSection() {
       totalIncompleteTodos !== undefined &&
       totalOnGoingTodos !== undefined &&
       totalCompletedTodos !== undefined
-    ) {
+    ) {console.log("insdie if filter check ")
       setLoading(false);
     }
   }, [totalIncompleteTodos, totalOnGoingTodos, totalCompletedTodos]);
@@ -98,7 +100,7 @@ export default function BoardsSection() {
               <p>No todos available</p>
             ) : (
               totalIncompleteTodos.map((todos) => (
-                <div className="all-incomplete-todos" key={todos._id}>
+                <div className="all-incomplete-todos" key={todos._id} draggable>
                   <div className="incompleteTodo-category">
                     <div className="category-heading">
                       <p>{todos.category}</p>
