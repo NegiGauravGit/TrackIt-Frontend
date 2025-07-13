@@ -3,13 +3,10 @@ import "../Styling/Authentication.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import {setIsAuthenticated,setUserInfo} from '../../Features/AuthSlcie'
-import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 
 
 export default function AuthenticationSection() {
-  const dispatch = useDispatch()
 
   const navigate = useNavigate()
   const [fromData,setformData] = useState({
